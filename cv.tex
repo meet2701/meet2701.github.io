@@ -1,0 +1,207 @@
+%-------------------------
+% Resume in Latex
+% Author : Meet Parekh
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Meet Parekh} \\ \vspace{1pt}
+    \small +91 9327689404 $|$ \href{mailto:meet.parekh@students.iiit.ac.in}{\underline{meet.parekh@students.iiit.ac.in}} $|$ 
+    \href{https://linkedin.com/in/meet-parekh-60521a23a}{\underline{\faLinkedin\ meet-parekh-60521a23a}} $|$
+    \href{https://github.com/meet2701}{\underline{\faGithub\ meet2701}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {International Institute of Information Technology (IIIT)}{Hyderabad, Telangana}
+      {B.Tech in Computer Science and Engineering;  CGPA: 9.17}{July 2024 -- Present}
+      \vspace{-10pt}
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Docs++ (Distributed Document System)} \href{https://github.com/meet2701/docs-plus-plus}{\faGithub} $|$ \emph{C, TCP/IP, Sockets}}{Nov 2025}
+          \resumeItemListStart
+            \resumeItem{\textbf{Architected} a concurrent, shared document editing system utilizing a custom TCP-based application protocol.}
+            \resumeItem{\textbf{Engineered} a Name Server for load balancing and Storage Servers with data replication to ensure system fault tolerance.}
+            \resumeItem{\textbf{Implemented} fine-grained concurrency control (row-level locking) and validated stability with 20+ concurrent clients across 5+ devices.}
+          \resumeItemListEnd
+          \vspace{-5pt}
+      \resumeProjectHeading
+          {\textbf{C-Shell (Custom Unix Shell)} \href{https://github.com/meet2701/C-Shell}{\faGithub} $|$ \emph{C, Linux API}}{Oct 2025}
+          \resumeItemListStart
+            \resumeItem{\textbf{Developed} a custom command-line interpreter supporting 10+ commands, process creation via fork/exec and background process management.}
+            \resumeItem{\textbf{Implemented} advanced I/O redirection and multi-stage piping to enable complex chaining of standard outputs and inputs.}
+            \resumeItem{\textbf{Integrated} robust signal handling (SIGINT, SIGTSTP) for job control and maintained persistent command history  with 15-entry circular buffer storage.}
+          \resumeItemListEnd
+          \vspace{-5pt}
+      \resumeProjectHeading
+    {\textbf{Multi-Threaded Bakery Simulation} \href{https://github.com/meet2701/bakerysim}{\faGithub} $|$ \emph{C, POSIX Threads, Performance Optimization}}{Nov 2025}
+    \resumeItemListStart
+      \resumeItem{\textbf{Reduced} lock contention by \textbf{77\%} through fine-grained locking and critical section optimization, improving throughput 221\%.}
+      \resumeItem{\textbf{Engineered} configurable thread pool (1-32 workers) with work-stealing scheduler, achieving 97\% CPU utilization.}
+      \vspace{-13pt}
+      \resumeItem{\textbf{Implemented} performance analytics tracking 15+ concurrency metrics enabling data-driven optimization decisions.}
+    \resumeItemListEnd
+    \vspace{-5pt}
+       \resumeProjectHeading
+          {\textbf{\href{https://iiit-mart-final-frontend.vercel.app/}{Buy Sell Rent Webapp}} \href{https://github.com/sadaltman/hackiiit-bsr}{\faGithub} $|$ \emph{MERN Stack (MongoDB, Express, React, Node.js)}}{Feb 2025}
+          \resumeItemListStart
+            \resumeItem{\textbf{Built} a full-stack peer-to-peer marketplace application enabling students to buy, sell, and rent items seamlessly.}
+            \resumeItem{\textbf{Implemented} secure authentication via JWT and integrated a real-time messaging system for user communication.}
+            \resumeItem{\textbf{Designed} a responsive UI with advanced search and category filtering to optimize the user experience across devices.}
+          \resumeItemListEnd
+          \vspace{-5pt}
+        \resumeProjectHeading
+          {\textbf{Aegis Database System} $|$ \emph{Python (Flask), MySQL, HTML/CSS}}{Nov 2025}
+          \resumeItemListStart
+            \resumeItem{\textbf{Designed} a highly scalable normalized relational schema enforcing ACID transactions and referential integrity.}
+            \resumeItem{\textbf{Implemented} RBAC and parameterized queries to prevent SQL injection vulnerabilities.}
+            \resumeItem{\textbf{Developed} complex SQL queries using JOINS and aggregates for a tactical dashboard with real-time data analysis.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------SKILLS-----------
+\vspace{-20pt}
+\section{Skills}
+\vspace{-5pt}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}l}
+      \textbf{Languages}{: C/C++, Javascript, Python, HTML, CSS} & \textbf{Operating Systems}{: Windows, Linux} \\
+      \textbf{Frameworks}{: React, Node.js, Flask, Express} & \textbf{Misc}{: Git, Github, Docker, VS Code, Sockets} \\
+      \textbf{Databases}{: MySQL, MongoDB, Supabase} & \textbf{Libraries}{: pandas, NumPy, Matplotlib, Manim}
+     \end{tabular*}
+    }}
+ \end{itemize}
+
+
+%-----------ACHIEVEMENTS-----------
+\vspace{-18pt}
+\section{Achievements}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{JEE Mains 2024}{: Secured All India Rank 28 (100\%ile) among 1.4 million candidates.} \\
+     \textbf{JEE Advanced 2024}{: Secured All India Rank 1263.} \\
+     \textbf{Codeforces} \href{https://codeforces.com/profile/meet27}{\faLink}{: Rated 1428 (Specialist); active competitive programmer.} \\
+     \textbf{Dean’s List 1}{: Awarded for being in Top 5\% of the batch in Spring ’25 Semester.} \\
+     \textbf{Olympiads}{: Qualified for Stage 2 in Astronomy (INAO ’23) \& Chemistry (INCHO ’23); NSEC National Top 1\% (2024).}
+    }}
+ \end{itemize}
+
+
+%-----------POSITIONS OF RESPONSIBILITY-----------
+\vspace{-15pt}
+\section{Positions of Responsibility}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Coordinator, Campus Life Council}{: Organized 10+ festivals and cultural events on campus.} \\
+     \textbf{Corporate Team, The Gaming Club}{: Managed operational budgets and facilitated professional communication with corporate sponsors.}
+    }}
+ \end{itemize}
+
+
+%-----------RELEVANT COURSEWORK-----------
+\vspace{-15pt}
+\section{Relevant Coursework}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Core CS}{: Data Structures \& Algorithms, Operating Systems \& Networks, Data \& Applications, Software Systems, Computer Systems Organization} \\
+     \textbf{Mathematics}{: Probability \& Statistics, Linear Algebra, Discrete Mathematics}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}

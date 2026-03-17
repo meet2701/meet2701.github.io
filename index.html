@@ -1,322 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Meet Parekh — CS Undergrad & Systems Programmer</title>
+    <meta name="description"
+        content="Portfolio of Meet Parekh — B.Tech CSE @ IIIT Hyderabad. Systems programmer, full-stack dev, competitive coder. JEE Mains AIR 28.">
     <link rel="stylesheet" href="main.css">
-    <!-- AOS CSS -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- AOS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <!-- GLightbox CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
+    <!-- ============ LOADING SCREEN ============ -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span class="loader-char" data-char="<">&lt;</span><span class="loader-char" data-char="M">M</span><span
+                    class="loader-char" data-char="e">e</span><span class="loader-char" data-char="e">e</span><span
+                    class="loader-char" data-char="t">t</span><span class="loader-char dot" data-char=".">.</span><span
+                    class="loader-char" data-char="d">d</span><span class="loader-char" data-char="e">e</span><span
+                    class="loader-char" data-char="v">v</span><span class="loader-char" data-char="/">/</span><span
+                    class="loader-char" data-char=">">&gt;</span>
+            </div>
+            <div class="loader-bar-track">
+                <div class="loader-bar-fill" id="loader-bar"></div>
+            </div>
+            <p class="loader-tagline">Loading awesomeness...</p>
+        </div>
+    </div>
+
+    <!-- ============ ONE PIECE EASTER EGG ============ -->
+    <div id="easter-egg-overlay">
+        <div class="easter-egg-content">
+            <div class="pirate-flag">&#x1F3F4;&#x200D;&#x2620;&#xFE0F;</div>
+            <blockquote class="op-quote">"A man's dreams never die."</blockquote>
+            <p class="op-attribution">— Marshall D. Teach</p>
+            <p class="op-hint">Click anywhere to close</p>
+        </div>
+    </div>
+
+    <!-- ============ NAVBAR ============ -->
     <header>
         <nav id="navbar">
             <div class="container">
-                <div class="logo">MEET</div>
+                <a href="#hero" class="logo" id="site-logo" title="Click me 5 times for a surprise 🏴‍☠️">
+                    <span class="logo-bracket">&lt;</span>Meet<span class="logo-dot">.</span>io<span
+                        class="logo-bracket">/&gt;</span>
+                </a>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#birthplace">Birthplace</a></li>
-                    <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#cv">CV</a></li>
-                    <li><a href="#textbox">TextBox</a></li>
+                    <li><a href="#beyond-code">Beyond Code</a></li>
+                    <li><a href="#cv" class="nav-cta">Resume</a></li>
                 </ul>
-                <div class="hamburger">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- Section 1: About Me -->
+        <!-- ============ HERO ============ -->
+        <section id="hero">
+            <div id="vanta-bg"></div>
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-glow"></div>
+                    <img src="assets/img/meet.jpg" alt="Meet Parekh" class="hero-image">
+                </div>
+                <div class="hero-text">
+                    <div class="availability-badge">
+                        <span class="badge-dot"></span> Open to Internships
+                    </div>
+                    <p class="hero-greeting">Hello, I'm</p>
+                    <h1 class="hero-name">Meet <span class="gradient-text">Parekh</span></h1>
+                    <div class="hero-tagline">
+                        <span id="typed-output"></span>
+                    </div>
+                    <p class="hero-description">
+                        I write systems code that doesn't crash <em>(most of the time)</em>.<br>
+                        CS undergrad at IIIT Hyderabad, building things that work at scale.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="assets/MeetQ2.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> Resume
+                        </a>
+                        <a href="#projects" class="btn btn-outline">
+                            <i class="fas fa-code"></i> View Work
+                        </a>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/meet-parekh-60521a23a/" target="_blank" rel="noopener"
+                            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/meet2701" target="_blank" rel="noopener" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://codeforces.com/profile/meet27" target="_blank" rel="noopener"
+                            aria-label="Codeforces"><i class="fas fa-code"></i></a>
+                        <a href="https://www.instagram.com/meet_2701/" target="_blank" rel="noopener"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:meet.parekh@students.iiit.ac.in" aria-label="Email"><i
+                                class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <p>Scroll Down</p>
+            </div>
+        </section>
+
+        <!-- ============ ABOUT ============ -->
         <section id="about" class="section">
             <div class="container">
-                <div class="about-content" data-aos="fade-up">
-                    <div class="about-image">
-                        <img src="assets/img/profile1.jpeg" alt="Profile Photo">
+                <h2 class="section-title" data-aos="fade-up">About <span class="gradient-text">Me</span></h2>
+                <div class="about-narrative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="narrative-block glass-card">
+                        <p class="narrative-lead">I'm endlessly curious about what happens between the code I write and
+                            the machine that runs it.</p>
+                        <p>Currently a first-year B.Tech CSE student at <strong>IIIT Hyderabad</strong> (CGPA 9.17,
+                            Dean's List), I spend my days building distributed systems, hacking on custom shells, and
+                            squeezing every last bit of performance out of multi-threaded code.</p>
+                        <p>When I'm not debugging race conditions or breaking things in my shell, I'm exploring
+                            <strong>trustworthy automated programming</strong> — because if AI is going to write code,
+                            someone needs to make sure it actually works. I'm also building a <strong>multi-agent
+                                orchestrator system</strong> for AI-based analysis, which is teaching me more about
+                            system design than any textbook could.</p>
+                        <p>I arrived here after scoring <strong>AIR 28 in JEE Mains</strong> (100 percentile among 1.4
+                            million candidates) and <strong>AIR 1263 in JEE Advanced</strong>. But honestly, the most
+                            interesting journey started after I got here — figuring out how real systems work and how to
+                            build things that matter.</p>
+                        <p>I believe the best way to learn is to build. Preferably something that breaks in interesting
+                            ways.</p>
                     </div>
-                    <div class="about-text">
-                        <h1>Hi, I'm <span class="highlight">Meet Parekh</span></h1>
-                        <h2>Student and Web Developer</h2>
-                        <p>Born with a keyboard in hand and code in my blood, I’m Meet Parekh, a curious CSE undergrad from IIIT-H who believes debugging is just modern meditation. I love building things, solving DSA puzzles, and occasionally daydreaming about becoming the Pirate King. If there’s a shortcut to learning something new, I’ll find it—or automate it.</p>
-                        <p>Currently exploring the depths of Data Structures, IoT, and low-level systems—while trying not to fall asleep in 8 AM lectures. Passionate about building intelligent tech with clean UI and meaningful purpose.Reach out if you want to discuss tech, anime, or why Luffy deserves to be Joy Boy. If this site impressed you, imagine what I could do with coffee and a deadline. </p>
-                        <div class="social-icons">
-                            <a href="https://www.linkedin.com/in/meet-parekh-60521a23a/" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://github.com/meet2701" class="social-icon"><i class="fab fa-github"></i></a>
-                            <a href="https://x.com/Meet12625285" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.instagram.com/meet_2701/" class="social-icon"><i class="fab fa-instagram"></i></a>
+
+                    <div class="about-stats">
+                        <div class="stat-card glass-card" data-tilt data-aos="fade-up" data-aos-delay="150">
+                            <div class="stat-number gradient-text">9.17</div>
+                            <div class="stat-label">CGPA at IIIT-H</div>
+                        </div>
+                        <div class="stat-card glass-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+                            <div class="stat-number gradient-text">28</div>
+                            <div class="stat-label">JEE Mains AIR</div>
+                        </div>
+                        <div class="stat-card glass-card" data-tilt data-aos="fade-up" data-aos-delay="250">
+                            <div class="stat-number gradient-text">1428</div>
+                            <div class="stat-label"><a href="https://codeforces.com/profile/meet27" target="_blank">CF
+                                    Specialist</a></div>
+                        </div>
+                        <div class="stat-card glass-card" data-tilt data-aos="fade-up" data-aos-delay="300">
+                            <div class="stat-number gradient-text">5+</div>
+                            <div class="stat-label">Projects Shipped</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 2: Birthplace -->
-        <section id="birthplace" class="section bg-light">
+        <!-- ============ PROJECTS ============ -->
+        <section id="projects" class="section section-alt">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">My Birthplace</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Beautiful scenes from where I grew up</p>
-                
-                <div class="gallery-grid" data-aos="fade-up" data-aos-delay="200">
-                    <a href="assets/img/birthplace/img1.jpeg" class="gallery-item glightbox" data-gallery="birthplace-gallery">
-                        <img src="assets/img/birthplace/img1.jpeg" alt="Birthplace Image 1">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h4>Raam Van</h4>
+                <h2 class="section-title" data-aos="fade-up">Things I've <span class="gradient-text">Built</span></h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">I learn by building. Here's some of
+                    the interesting stuff.</p>
+
+                <div class="projects-grid">
+                    <!-- WIP: Multi-Agent Orchestrator -->
+                    <div class="project-card glass-card wip-card" data-tilt data-aos="fade-up" data-aos-delay="80">
+                        <div class="wip-badge"><i class="fas fa-hammer"></i> Work in Progress</div>
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-robot"></i></div>
+                            <div class="project-links"></div>
+                        </div>
+                        <h3 class="project-title">Multi-Agent Orchestrator</h3>
+                        <p class="project-subtitle">AI-Based Analysis System</p>
+                        <p class="project-description">Currently designing a system where multiple AI agents collaborate
+                            to analyze complex data. Learning a ton about agent communication protocols, task
+                            decomposition, and making autonomous systems that don't go off the rails.</p>
+                        <div class="project-tags">
+                            <span class="tag">AI/ML</span>
+                            <span class="tag">Multi-Agent</span>
+                            <span class="tag">Systems Design</span>
+                        </div>
+                    </div>
+
+                    <!-- Docs++ -->
+                    <div class="project-card glass-card" data-tilt data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/meet2701/docs-plus-plus" target="_blank" rel="noopener"><i
+                                        class="fab fa-github"></i></a>
                             </div>
                         </div>
-                    </a>
-                    <a href="assets/img/birthplace/img2.jpeg" class="gallery-item glightbox" data-gallery="birthplace-gallery">
-                        <img src="assets/img/birthplace/img2.jpeg" alt="Birthplace Image 2">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h4>Aaji Dam</h4>
+                        <h3 class="project-title">Docs++</h3>
+                        <p class="project-subtitle">Distributed Document System</p>
+                        <p class="project-description">Built a Google Docs-style concurrent editing system from scratch
+                            using raw TCP sockets in C. The hardest part? Making 20+ clients on 5 devices edit the same
+                            file without corrupting it. Row-level locking was the hero.</p>
+                        <div class="project-tags">
+                            <span class="tag">C</span>
+                            <span class="tag">TCP/IP</span>
+                            <span class="tag">Sockets</span>
+                            <span class="tag">Concurrency</span>
+                        </div>
+                    </div>
+
+                    <!-- C-Shell -->
+                    <div class="project-card glass-card" data-tilt data-aos="fade-up" data-aos-delay="150">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-terminal"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/meet2701/C-Shell" target="_blank" rel="noopener"><i
+                                        class="fab fa-github"></i></a>
                             </div>
                         </div>
-                    </a>
-                    <a href="assets/img/birthplace/img3.jpeg" class="gallery-item glightbox" data-gallery="birthplace-gallery">
-                        <img src="assets/img/birthplace/img3.jpeg" alt="Birthplace Image 3">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h4>Ishwariya Park</h4>
+                        <h3 class="project-title">C-Shell</h3>
+                        <p class="project-subtitle">Custom Unix Shell</p>
+                        <p class="project-description">Ever wondered what happens when you type a command and hit enter?
+                            I wrote a shell to find out. Supports piping, redirection, background processes, signal
+                            handling — basically everything bash does, just jankier.</p>
+                        <div class="project-tags">
+                            <span class="tag">C</span>
+                            <span class="tag">Linux API</span>
+                            <span class="tag">Systems</span>
+                        </div>
+                    </div>
+
+                    <!-- Bakery Sim -->
+                    <div class="project-card glass-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-cogs"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/meet2701/bakerysim" target="_blank" rel="noopener"><i
+                                        class="fab fa-github"></i></a>
                             </div>
                         </div>
-                    </a>
-                    <a href="assets/img/birthplace/img4.jpeg" class="gallery-item glightbox" data-gallery="birthplace-gallery">
-                        <img src="assets/img/birthplace/img4.jpeg" alt="Birthplace Image 4">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h4>Atal Sarovar</h4>
+                        <h3 class="project-title">Bakery Simulation</h3>
+                        <p class="project-subtitle">Multi-Threaded Performance Engine</p>
+                        <p class="project-description">Turned a simple bakery problem into a deep-dive on concurrency.
+                            Cut lock contention by 77%, got 97% CPU utilization with a work-stealing scheduler. The kind
+                            of project where you stare at numbers and feel unreasonably proud.</p>
+                        <div class="project-tags">
+                            <span class="tag">C</span>
+                            <span class="tag">POSIX Threads</span>
+                            <span class="tag">Optimization</span>
+                        </div>
+                    </div>
+
+                    <!-- Buy Sell Rent -->
+                    <div class="project-card glass-card" data-tilt data-aos="fade-up" data-aos-delay="250">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-shopping-cart"></i></div>
+                            <div class="project-links">
+                                <a href="https://iiit-mart-final-frontend.vercel.app/" target="_blank" rel="noopener"><i
+                                        class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/sadaltman/hackiiit-bsr" target="_blank" rel="noopener"><i
+                                        class="fab fa-github"></i></a>
                             </div>
                         </div>
-                    </a>
-                    <a href="assets/img/birthplace/img5.jpeg" class="gallery-item glightbox" data-gallery="birthplace-gallery">
-                        <img src="assets/img/birthplace/img5.jpeg" alt="Birthplace Image 5">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h4>Fun World</h4>
-                            </div>
+                        <h3 class="project-title">Buy Sell Rent</h3>
+                        <p class="project-subtitle">Full-Stack Marketplace</p>
+                        <p class="project-description">Built a peer-to-peer marketplace so students can stop texting in
+                            WhatsApp groups. MERN stack with JWT auth, real-time chat, and search that actually works.
+                            Currently live and used by actual humans.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Express</span>
                         </div>
-                    </a>
-                    <a href="assets/img/birthplace/img6.jpeg" class="gallery-item glightbox" data-gallery="birthplace-gallery">
-                        <img src="assets/img/birthplace/img6.jpeg" alt="Birthplace Image 6">
-                        <div class="gallery-overlay">
-                            <div class="gallery-info">
-                                <h4>Swaminarayan Temple</h4>
-                            </div>
+                    </div>
+
+                    <!-- Aegis DB -->
+                    <div class="project-card glass-card" data-tilt data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-database"></i></div>
+                            <div class="project-links"></div>
                         </div>
-                    </a>
+                        <h3 class="project-title">Aegis Database System</h3>
+                        <p class="project-subtitle">Secure RDBMS Application</p>
+                        <p class="project-description">A defense-in-depth database app with RBAC, parameterized queries
+                            (goodbye SQL injection), and a tactical dashboard powered by complex JOINs. Learned that
+                            schema design is an art, not a science.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 3: Education & Achievements -->
-<section id="education" class="section">
-    <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Education & Achievements</h2>
-        
-        <div class="timeline education-timeline" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="timeline-category">Education</h3>
-            
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-university"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Secondary Education (Class 9-10)</h3>
-                    <h4>Innovative Schools, 2018-2020</h4>
-                    <p>SSC (Gujarat Board) - <strong>89.5%</strong></p>
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-school"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Higher Secondary (Class 11-12)</h3>
-                    <h4>B. H. Rathod High School, 2022-2024</h4>
-                    <p>HSC (Gujarat Board) - <strong>92.61%</strong></p>
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>JEE Entrance Examination</h3>
-                    <h4>JoSAA, IIT-JEE, 2024</h4>
-                    <ul class="timeline-list">
-                        <li>JEE Mains: <strong>AIR 28 (100 Percentile)</strong></li>
-                        <li>JEE Advanced: <strong>AIR 1263</strong></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline achievements-timeline" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="timeline-category">Achievements</h3>
-            
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-music"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>Tabla Visharad</h3>
-                    <h4>Akhil Bharatiya Gandharva MahaVidyalaya</h4>
-                    <p>Accomplished classical music training and certification in Tabla</p>
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-medal"></i>
-                </div>
-                <div class="timeline-content">
-                    <h3>National Olympiad Qualifications</h3>
-                    <h4>Class 12, 2023</h4>
-                    <ul class="timeline-list">
-                        <li>INAO (Indian National Astronomy Olympiad) - National Level Qualified</li>
-                        <li>INChO (Indian National Chemistry Olympiad) - National Level Qualified</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-        <!-- Section 4: Skills -->
-        <section id="skills" class="section bg-light">
+        <!-- ============ SKILLS ============ -->
+        <section id="skills" class="section">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">My Skills</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Technical expertise and capabilities</p>
-                
-                <div class="skills-container" data-aos="fade-up" data-aos-delay="200">
-                    <div class="skill-item">
-                        <div class="skill-name">HTML/CSS</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 95%;" data-level="80%"></div>
+                <h2 class="section-title" data-aos="fade-up">Tech <span class="gradient-text">Stack</span></h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">Tools of the trade</p>
+
+                <div class="skills-grid" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-category glass-card" data-tilt>
+                        <h3><i class="fas fa-code"></i> Languages</h3>
+                        <div class="skill-chips">
+                            <span class="chip">C/C++</span>
+                            <span class="chip">JavaScript</span>
+                            <span class="chip">Python</span>
+                            <span class="chip">HTML</span>
+                            <span class="chip">CSS</span>
                         </div>
                     </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-name">JavaScript</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 90%;" data-level="65%"></div>
+                    <div class="skill-category glass-card" data-tilt>
+                        <h3><i class="fas fa-layer-group"></i> Frameworks</h3>
+                        <div class="skill-chips">
+                            <span class="chip">React</span>
+                            <span class="chip">Node.js</span>
+                            <span class="chip">Flask</span>
+                            <span class="chip">Express</span>
                         </div>
                     </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-name">C/C++</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%;" data-level="90%"></div>
+                    <div class="skill-category glass-card" data-tilt>
+                        <h3><i class="fas fa-database"></i> Databases</h3>
+                        <div class="skill-chips">
+                            <span class="chip">MySQL</span>
+                            <span class="chip">MongoDB</span>
+                            <span class="chip">Supabase</span>
                         </div>
                     </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-name">Python</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 80%;" data-level="70%"></div>
+                    <div class="skill-category glass-card" data-tilt>
+                        <h3><i class="fas fa-tools"></i> Dev Tools</h3>
+                        <div class="skill-chips">
+                            <span class="chip">Git</span>
+                            <span class="chip">Docker</span>
+                            <span class="chip">Linux</span>
+                            <span class="chip">VS Code</span>
+                            <span class="chip">Sockets</span>
                         </div>
                     </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-name">Database Management</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 70%;" data-level="80%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-name">IoT</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 65%;" data-level="75%"></div>
+                    <div class="skill-category glass-card" data-tilt>
+                        <h3><i class="fas fa-book"></i> Libraries</h3>
+                        <div class="skill-chips">
+                            <span class="chip">pandas</span>
+                            <span class="chip">NumPy</span>
+                            <span class="chip">Matplotlib</span>
+                            <span class="chip">Manim</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 5: CV Download -->
+        <!-- ============ BEYOND CODE ============ -->
+        <section id="beyond-code" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Beyond <span class="gradient-text">Code</span></h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">There's more to me than terminal
+                    windows</p>
+
+                <div class="beyond-grid">
+                    <div class="beyond-card glass-card" data-tilt data-aos="fade-up" data-aos-delay="100">
+                        <div class="beyond-emoji">🥁</div>
+                        <h3>Tabla Visharad</h3>
+                        <p>Certified by Akhil Bharatiya Gandharva MahaVidyalaya. Years of classical music training
+                            taught me rhythm, discipline, and that timing is everything — in music and in code.</p>
+                    </div>
+                    <div class="beyond-card glass-card" data-tilt data-aos="fade-up" data-aos-delay="150">
+                        <div class="beyond-emoji">🏏</div>
+                        <h3>Cricket</h3>
+                        <p>Whether it's a gully match or campus cricket, there's nothing like the satisfaction of a
+                            clean cover drive. A team sport that teaches you about strategy under pressure.</p>
+                    </div>
+                    <div class="beyond-card glass-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+                        <div class="beyond-emoji">🎱</div>
+                        <h3>Snooker</h3>
+                        <p>Angles, precision, and thinking three shots ahead. Snooker is basically dynamic programming
+                            on a felt table. My favourite way to decompress.</p>
+                    </div>
+                    <div class="beyond-card glass-card" data-tilt data-aos="fade-up" data-aos-delay="250">
+                        <div class="beyond-emoji">🧩</div>
+                        <h3>Math & Quant Puzzles</h3>
+                        <p>Currently obsessed with mathematical puzzles and introductory quant problems. There's a
+                            unique joy in reducing a complex problem to an elegant solution.</p>
+                    </div>
+                    <div class="beyond-card glass-card" data-tilt data-aos="fade-up" data-aos-delay="300">
+                        <div class="beyond-emoji">🔬</div>
+                        <h3>Science Olympiads</h3>
+                        <p>Qualified for Stage 2 in Astronomy (INAO '23) & Chemistry (INCHO '23). Also NSEC National Top
+                            1% in 2024. I just really like understanding how things work.</p>
+                    </div>
+                    <div class="beyond-card glass-card" data-tilt data-aos="fade-up" data-aos-delay="350">
+                        <div class="beyond-emoji">🎌</div>
+                        <h3>Campus Life</h3>
+                        <p>Coordinator at Campus Life Council — organized 10+ festivals. Also part of The Gaming Club's
+                            corporate team, managing budgets and sponsor relations. College isn't just about code.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ RESUME DOWNLOAD ============ -->
         <section id="cv" class="section">
             <div class="container">
                 <div class="cv-content" data-aos="zoom-in">
-                    <h2 class="section-title">My CV</h2>
-                    <p>Download my complete curriculum vitae for more detailed information about my experience and qualifications.</p>
-                    <a href="assets/CV.pdf" class="btn btn-primary">
-                        <i class="fas fa-download"></i> Download CV
+                    <div class="cv-icon"><i class="fas fa-file-pdf"></i></div>
+                    <h2>Like what you see?</h2>
+                    <p>Grab my resume for the formal version — all the details, none of the personality.</p>
+                    <a href="assets/MeetQ2.pdf" class="btn btn-primary" download>
+                        <i class="fas fa-download"></i> Download Resume
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <section id="textbox" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Text Analysis</h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Analyze text and track events</p>
-            
-            <div class="textbox-content" data-aos="fade-up" data-aos-delay="200">
-                <h3>Event Tracking</h3>
-                <p>All click events and page views are being tracked. Check the console for details.</p>
-                <div class="event-log-container">
-                    <h4>Recent Events:</h4>
-                    <div id="event-log"></div>
-                </div>
-                
-                <h3>Text Analysis</h3>
-                <p>Enter text below (10,000+ words recommended) for analysis:</p>
-                <textarea id="text-input" placeholder="Paste your text here..."></textarea>
-                <button id="analyze-btn" class="btn">Analyze Text</button>
-                
-                <div class="results-container">
-                    <div class="result-section">
-                        <h4>Basic Statistics</h4>
-                        <div id="basic-stats"></div>
-                    </div>
-                    <div class="result-section">
-                        <h4>Pronouns Count</h4>
-                        <div id="pronoun-stats"></div>
-                    </div>
-                    <div class="result-section">
-                        <h4>Prepositions Count</h4>
-                        <div id="preposition-stats"></div>
-                    </div>
-                    <div class="result-section">
-                        <h4>Indefinite Articles Count</h4>
-                        <div id="article-stats"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
+    <!-- ============ FOOTER ============ -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Meet Parekh. All Rights Reserved.</p>
-            <div class="social-icons" style="margin-top: 15px; justify-content: center;">
-                <a href="https://www.linkedin.com/in/meet-parekh-60521a23a/" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/meet2701" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="https://x.com/Meet12625285" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/meet_2701/" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-bracket">&lt;</span>Meet<span class="logo-dot">.</span>dev<span
+                        class="logo-bracket">/&gt;</span>
+                </div>
+                <div class="footer-meta">
+                    <p class="tech-flex">Built with
+                        <span class="tech-badge">Three.js</span>
+                        <span class="tech-badge">Vanta.js</span>
+                        <span class="tech-badge">GSAP</span>
+                        <span class="tech-badge">Typed.js</span>
+                        <span class="tech-badge">Vanilla Tilt</span>
+                        <span class="tech-badge">AOS</span>
+                    </p>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/meet-parekh-60521a23a/" target="_blank" rel="noopener"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/meet2701" target="_blank" rel="noopener"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://codeforces.com/profile/meet27" target="_blank" rel="noopener"><i
+                            class="fas fa-code"></i></a>
+                    <a href="https://www.instagram.com/meet_2701/" target="_blank" rel="noopener"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="mailto:meet.parekh@students.iiit.ac.in"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p class="footer-copy">&copy; 2025 Meet Parekh. Brewed with <i class="fas fa-mug-hot"></i> and
+                    questionable sleep schedules.</p>
             </div>
         </div>
     </footer>
 
-    <!-- AOS JS -->
+    <!-- ============ SCRIPTS ============ -->
+    <!-- Three.js (required by Vanta) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <!-- Vanta.js NET -->
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- AOS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <!-- GLightbox JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
-    <!-- Custom JS -->
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- Vanilla Tilt -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+    <!-- Custom -->
     <script src="main.js"></script>
 </body>
+
 </html>
